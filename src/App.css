@@ -1,0 +1,17 @@
+body{
+	background-color: #333333;
+}
+
+.App {
+  text-align: center;
+}
+
+.questionDisplay{
+	color: #ffffff;
+	font-size: 100pt;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
