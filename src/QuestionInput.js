@@ -3,25 +3,31 @@ import './QuestionInput.css';
 
 class QuestionInput extends Component {
 
+    constructor(props){
+      super(props);
+      const questionString = this.props.questions.reduce((initial, question)=>{
+            return initial + question + "\n";
+        }, "");
+      this.state = {questionString: questionString };
+      this.update = this.update.bind(this);
+    }
 
-    update(formVal){
-       this.props.setQuestions(formVal.split("\n"));
+    update(e){
+     const formVal = e.target.value;
+      this.setState({questionString: formVal});
+      this.props.setQuestions(formVal.split("\n"));
     }
 
     render() {
-        const questionString = this.props.questions.reduce((initial, question)=>{
-            return initial + question + "\n";
-        }, "")
+        
         return (
             <div >
                 <textarea
                     rows="10"
                     cols="10"
                     className="QuestionInput"
-                    value={questionString}
-                    onChange={(event)=>{
-                        console.log(event.target.value);
-                    }}
+                    value={this.state.questionString}
+                    onChange={this.update}
                 />
             </div>
         );

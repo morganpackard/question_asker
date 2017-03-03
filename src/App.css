@@ -7,8 +7,11 @@ body{
 }
 
 .questionDisplay{
-	color: #ffffff;
-	font-size: 100pt;
+	color: #aaaaaa;
+	font-size: 50pt;
+    padding: 20px;
+    font-weight: bold;
+    font-family: helvetica, arial;
 }
 
 @keyframes App-logo-spin {
